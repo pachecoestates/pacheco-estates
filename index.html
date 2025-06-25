@@ -1,9 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pacheco Estates</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacheco Estates - Sell Your Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0a1f44; /* Dark navy blue */
+      --accent-color: #00b2ff;  /* Light blue accent */
+      --text-color: #ffffff;
+      --bg-color: #f5f6fa;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+    }
+
+    header {
+      background-color: var(--primary-color);
+      padding: 20px;
+      color: var(--text-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .cta {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      font-weight: bold;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,14 +89,20 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Sell Your Home Fast, for Cash</h2>
-    <p>No fees. No agents. No repairs. Just cash.</p>
-    <a class="cta" href="contact.html">Request a Cash Offer</a>
-  </main>
+  <section class="hero">
+    <h1>Sell Your Home Fast for Cash</h1>
+    <p>No agents. No fees. No repairs. Just a fair cash offer within 24 hours.</p>
+    <a href="contact.html" class="cta">Request Your Offer</a>
+  </section>
+
+  <section class="section">
+    <h2>How It Works</h2>
+    <p>We make home selling easy. Just tell us about your property, and we’ll send you a competitive cash offer — fast.</p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Pacheco Estates</p>
+    <p>&copy; 2025 Pacheco Estates. All rights reserved.</p>
   </footer>
 </body>
 </html>
+
