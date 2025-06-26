@@ -80,7 +80,7 @@
     }
     .hero-image img {
       width: 550px;
-      border-radius: 10px;
+      border-radius: 20px 0 20px 0;
       object-fit: cover;
     }
     .cta-button {
@@ -94,10 +94,25 @@
       font-size: 18px;
     }
     .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
       padding: 80px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
-      text-align: center;
+      gap: 40px;
+    }
+    .section.reverse {
+      flex-direction: row-reverse;
+    }
+    .section-content {
+      flex: 1;
+      min-width: 300px;
+    }
+    .section-media {
+      flex: 1;
+      min-width: 300px;
     }
     .section h2 {
       font-size: 36px;
@@ -109,9 +124,8 @@
     }
     .section img, .section video {
       width: 100%;
-      max-width: 800px;
-      border-radius: 8px;
-      margin: 20px 0;
+      border-radius: 20px;
+      object-fit: cover;
     }
     footer {
       background-color: var(--primary-color);
@@ -154,31 +168,46 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top: 40px;">
-    <h2>You Deserve a Simple Way to Sell</h2>
-    <p>Most homeowners feel overwhelmed selling their property. That’s why we buy homes directly — no agents, no fees, no surprises.</p>
-    <img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Happy Seller">
-    <br>
-    <a href="contact.html" class="cta-button" style="margin-bottom: 0;">Get My Offer Now</a>
+  <section class="section">
+    <div class="section-content">
+      <h2>You Deserve a Simple Way to Sell</h2>
+      <p>Most homeowners feel overwhelmed selling their property. That’s why we buy homes directly — no agents, no fees, no surprises.</p>
+      <a href="contact.html" class="cta-button">Get My Offer Now</a>
+    </div>
+    <div class="section-media">
+      <img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Happy Seller">
+    </div>
+  </section>
+
+  <section class="section reverse">
+    <div class="section-content">
+      <h2>A Clear Path, From Offer to Close</h2>
+      <p>We’ll give you a competitive offer fast. You pick your close date. We handle the paperwork. That’s it.</p>
+    </div>
+    <div class="section-media">
+      <img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Selling Option">
+    </div>
   </section>
 
   <section class="section">
-    <h2>A Clear Path, From Offer to Close</h2>
-    <p>We’ll give you a competitive offer fast. You pick your close date. We handle the paperwork. That’s it.</p>
-    <img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Selling Option">
+    <div class="section-content">
+      <h2>A Guide You Can Trust</h2>
+      <p>You're not alone. Our team is here to support you through every step, with real people and real communication.</p>
+    </div>
+    <div class="section-media">
+      <img src="https://images.pexels.com/photos/8867436/pexels-photo-8867436.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Support on Phone">
+    </div>
   </section>
 
-  <section class="section" style="background-color: #fff;">
-    <h2>A Guide You Can Trust</h2>
-    <p>You're not alone. Our team is here to support you through every step, with real people and real communication.</p>
-    <img src="https://images.pexels.com/photos/8867436/pexels-photo-8867436.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Support on Phone">
-  </section>
-
-  <section class="section">
-    <h2>Join Thousands Who Sold Smarter</h2>
-    <p>Pacheco Estates has helped people just like you skip the stress and sell on their own terms. Let’s do the same for you.</p>
-    <a href="contact.html" class="cta-button">Get Started</a>
-    <img src="https://images.pexels.com/photos/3845512/pexels-photo-3845512.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Happy clients and home">
+  <section class="section reverse">
+    <div class="section-content">
+      <h2>Join Thousands Who Sold Smarter</h2>
+      <p>Pacheco Estates has helped people just like you skip the stress and sell on their own terms. Let’s do the same for you.</p>
+      <a href="contact.html" class="cta-button">Get Started</a>
+    </div>
+    <div class="section-media">
+      <img src="https://images.pexels.com/photos/3845512/pexels-photo-3845512.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Happy clients and home">
+    </div>
   </section>
 
   <footer>
