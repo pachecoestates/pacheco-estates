@@ -229,7 +229,10 @@
   </section>
 
   <section class="section" style="flex-direction: column; max-width: 900px; margin: auto;">
-    <form id="offer-form" style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+    <form id="offer-form" action="https://formsubmit.co/sales@pachecoestates.com" method="POST" style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Property Submission">
+      <input type="hidden" name="_next" value="https://www.pachecoestates.com/#thank-you">
       <h2 style="text-align: center; margin-bottom: 10px; font-size: 36px;">Request Your Cash Offer</h2>
     <form style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
       <input type="text" placeholder="Full Name" required>
@@ -340,10 +343,9 @@
   const offerForm = document.getElementById('offer-form');
   if (offerForm) {
     offerForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('confirmation-message').style.display = 'block';
-      offerForm.reset();
-      offerForm.scrollIntoView({ behavior: 'smooth' });
+    // Let FormSubmit handle it
+    document.getElementById('confirmation-message').style.display = 'block';
+  });
     });
   }
 </script>
