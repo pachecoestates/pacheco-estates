@@ -230,7 +230,7 @@
 
   <section class="section" style="flex-direction: column; max-width: 800px; margin: auto;">
     <h2 style="text-align: center; margin-bottom: 30px;">Request Your Cash Offer</h2>
-    <form style="display: grid; gap: 20px;">
+    <form style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
       <input type="text" placeholder="Full Name" required>
       <input type="text" placeholder="Property Address" required>
       <input type="tel" placeholder="Phone Number" required>
@@ -245,18 +245,18 @@
       </select>
 
       <label>Reason for Selling (select all that apply):</label>
-      <select multiple size="5">
-        <option>Pre-foreclosure</option>
-        <option>Financial reasons</option>
-        <option>Emergency sale</option>
-        <option>Death in the family</option>
-        <option>Inherited property</option>
-        <option>Relocating</option>
-        <option>Moving closer to family</option>
-        <option>Tired landlord</option>
-        <option>Too many repairs</option>
-        <option>Other</option>
-      </select>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;">
+  <label><input type="checkbox" name="reason" value="Pre-foreclosure"> Pre-foreclosure</label>
+  <label><input type="checkbox" name="reason" value="Financial reasons"> Financial reasons</label>
+  <label><input type="checkbox" name="reason" value="Emergency sale"> Emergency sale</label>
+  <label><input type="checkbox" name="reason" value="Death in the family"> Death in the family</label>
+  <label><input type="checkbox" name="reason" value="Inherited property"> Inherited property</label>
+  <label><input type="checkbox" name="reason" value="Relocating"> Relocating</label>
+  <label><input type="checkbox" name="reason" value="Moving closer to family"> Moving closer to family</label>
+  <label><input type="checkbox" name="reason" value="Tired landlord"> Tired landlord</label>
+  <label><input type="checkbox" name="reason" value="Too many repairs"> Too many repairs</label>
+  <label><input type="checkbox" name="reason" value="Other"> Other</label>
+</div>
 
       <label>Is anyone living in the property?</label>
       <select required>
