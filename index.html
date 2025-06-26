@@ -229,7 +229,7 @@
   </section>
 
   <section class="section" style="flex-direction: column; max-width: 900px; margin: auto;">
-    <form style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+    <form id="offer-form" style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
       <h2 style="text-align: center; margin-bottom: 10px; font-size: 36px;">Request Your Cash Offer</h2>
     <form style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
       <input type="text" placeholder="Full Name" required>
@@ -318,11 +318,34 @@
       <textarea rows="4" placeholder="Additional notes (optional)"></textarea>
 
       <button type="submit" class="cta-button">Submit My Request</button>
+      <p id="confirmation-message" style="display:none; color: green; font-weight: bold; text-align: center; margin-top: 20px;">Thank you! Your request has been received. We'll contact you shortly.</p>
     </form>
   </section>
 
   <footer>
     <p>&copy; 2025 Pacheco Estates. Helping homeowners sell smarter, faster, easier.</p>
   </footer>
+<script>
+  document.querySelectorAll('.cta-button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (this.closest('form')) return; // skip if it's the form submit button
+      const formSection = document.getElementById('offer-form');
+      if (formSection) {
+        e.preventDefault();
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  const offerForm = document.getElementById('offer-form');
+  if (offerForm) {
+    offerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('confirmation-message').style.display = 'block';
+      offerForm.reset();
+      offerForm.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+</script>
 </body>
 </html>
