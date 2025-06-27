@@ -177,6 +177,28 @@
     currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
     testimonialCarousel.style.transform = `translateX(-${currentTestimonial * 100}%)`;
   }, 5000);
+  const carouselEl = document.querySelector('.testimonial-carousel');
+  let testimonialShift = 0;
+  if (carouselEl) {
+    setInterval(() => {
+      testimonialShift = (testimonialShift + 1) % 3;
+      carouselEl.style.transform = `translateX(-${testimonialShift * 33.3333}%)`;
+    }, 5000);
+  }
+  const carouselTrack = document.querySelector('.testimonial-carousel');
+  const totalCards = document.querySelectorAll('.testimonial-card').length;
+  let activeIndex = 0;
+  function updateCarousel(index) {
+    carouselTrack.style.transform = `translateX(-${index * 33.3333}%)`;
+  }
+  document.getElementById('prevTestimonial').addEventListener('click', () => {
+    activeIndex = (activeIndex - 1 + totalCards) % totalCards;
+    updateCarousel(activeIndex);
+  });
+  document.getElementById('nextTestimonial').addEventListener('click', () => {
+    activeIndex = (activeIndex + 1) % totalCards;
+    updateCarousel(activeIndex);
+  });
 </script>
 </head>
 <body>
@@ -251,24 +273,28 @@
 
   <section class="section" style="flex-direction: column; text-align: center;">
   <h2 style="font-size: 36px; margin-bottom: 40px;">What Homeowners Are Saying</h2>
-  <div class="testimonial-carousel" style="display: flex; gap: 20px; overflow: hidden; justify-content: center; position: relative; transition: transform 0.5s ease; width: 100%; max-width: 960px; margin: 0 auto;">
-    <div class="testimonial-card" style="flex: 0 0 100%; max-width: 100%; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); background: white;">
-      <p style="font-style: italic;">“Pacheco Estates made the selling process stress-free and simple. I got an offer in 24 hours!”</p>
-      <p style="font-weight: bold; margin-top: 10px;">— Maria G., Sacramento</p>
-    </div>
-    <div class="testimonial-card" style="flex: 0 0 100%; max-width: 100%; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); background: white;">
-      <p style="font-style: italic;">“I inherited a property I didn’t want. They made me a fair offer and took care of everything.”</p>
-      <p style="font-weight: bold; margin-top: 10px;">— Jamal W., Fresno</p>
-    </div>
-    <div class="testimonial-card" style="flex: 0 0 100%; max-width: 100%; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); background: white;">
-      <p style="font-style: italic;">“Highly recommend them. No repairs, no agents, just results.”</p>
-      <p style="font-weight: bold; margin-top: 10px;">— Cheryl S., Modesto</p>
+  <div class="testimonial-carousel-wrapper" style="overflow: hidden; width: 100%; max-width: 1100px; margin: auto;">
+    <div class="testimonial-carousel" style="display: flex; transition: transform 0.6s ease; width: 300%;">
+      <div class="testimonial-card" style="flex: 0 0 33.3333%; padding: 25px; box-sizing: border-box; background: white; margin: 0 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+        <p style="font-style: italic;">“Pacheco Estates made the selling process stress-free and simple. I got an offer in 24 hours!”</p>
+        <p style="font-weight: bold; margin-top: 10px;">— Maria G., Sacramento</p>
+      </div>
+      <div class="testimonial-card" style="flex: 0 0 33.3333%; padding: 25px; box-sizing: border-box; background: white; margin: 0 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+        <p style="font-style: italic;">“I inherited a property I didn’t want. They made me a fair offer and took care of everything.”</p>
+        <p style="font-weight: bold; margin-top: 10px;">— Jamal W., Fresno</p>
+      </div>
+      <div class="testimonial-card" style="flex: 0 0 33.3333%; padding: 25px; box-sizing: border-box; background: white; margin: 0 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+        <p style="font-style: italic;">“Highly recommend them. No repairs, no agents, just results.”</p>
+        <p style="font-weight: bold; margin-top: 10px;">— Cheryl S., Modesto</p>
+      </div>
     </div>
   </div>
-</section>
+<div style="text-align: center; margin-top: 20px;">
+  <button id="prevTestimonial" style="margin-right: 10px; padding: 10px 20px; font-weight: bold; border-radius: 6px; border: none; background-color: var(--accent-color); color: white; cursor: pointer;">‹</button>
+  <button id="nextTestimonial" style="padding: 10px 20px; font-weight: bold; border-radius: 6px; border: none; background-color: var(--accent-color); color: white; cursor: pointer;">›</button>
+</div>
 
-<section class="section" style="flex-direction: column; text-align: center;">
-  <h2 style="margin-bottom: 40px; font-size: 36px;">Here’s How It Works</h2>
+$1</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
     <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
       <h3 style="font-size: 24px; color: var(--primary-color);">Step 1</h3>
