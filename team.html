@@ -1,13 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Our Team - Pacheco Estates</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet the Team - Pacheco Estates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0a1f44;
+      --accent-color: #00b2ff;
+      --text-color: #ffffff;
+      --bg-color: #f8f9fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+    }
+    header {
+      background-color: var(--primary-color);
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .hero-team {
+      padding: 80px 40px;
+      text-align: center;
+      background-color: var(--primary-color);
+      color: white;
+    }
+    .hero-team h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero-team p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .team-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .team-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .team-member {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    .team-member h3 {
+      font-size: 20px;
+      margin: 10px 0 5px;
+    }
+    .team-member p {
+      font-size: 16px;
+      color: #333;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 16px;
+    }
+    @media (max-width: 768px) {
+      .hero-team h1 { font-size: 36px; }
+      .hero-team p { font-size: 18px; }
+      .team-section { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Pacheco Estates</h1>
+    <h1 style="margin: 0; font-size: 24px; font-weight: 700; color: white;">Pacheco Estates</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -16,13 +113,34 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Meet the Team</h2>
-    <p>We're a small team of real estate professionals who care.</p>
-  </main>
+  <section class="hero-team">
+    <h1>Meet Our Team</h1>
+    <p>We’re a small, dedicated team — and that’s our superpower. You’ll get personal service, clear communication, and a partner who truly cares.</p>
+  </section>
+
+  <section class="team-section">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Team Member">
+        <h3>Jessica Pacheco</h3>
+        <p>Founder & Lead Home Advisor</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Team Member">
+        <h3>Alex Mendez</h3>
+        <p>Acquisition Specialist</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Team Member">
+        <h3>Sophia Tran</h3>
+        <p>Transaction Coordinator</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Pacheco Estates</p>
+    <p>&copy; 2025 Pacheco Estates. Small team, big results.</p>
   </footer>
 </body>
 </html>
