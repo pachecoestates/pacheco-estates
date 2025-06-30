@@ -1,9 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Pacheco Estates</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0a1f44;
+      --accent-color: #00b2ff;
+      --text-color: #ffffff;
+      --bg-color: #f8f9fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+    }
+    header {
+      background-color: var(--primary-color);
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .hero-about {
+      padding: 80px 40px;
+      text-align: center;
+      background-color: var(--primary-color);
+      color: white;
+    }
+    .hero-about h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero-about p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .about-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .about-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 16px;
+    }
+    @media (max-width: 768px) {
+      .hero-about h1 { font-size: 36px; }
+      .hero-about p { font-size: 18px; }
+      .about-section { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,13 +87,24 @@
     </nav>
   </header>
 
-  <main>
-    <h2>About Us</h2>
-    <p>We help homeowners sell fast. No stress. No hidden fees. Local & trusted.</p>
-  </main>
+  <section class="hero-about">
+    <h1>About Pacheco Estates</h1>
+    <p>We believe every homeowner deserves a fair, fast, and stress-free way to sell. Our mission is to make that possible — every single time.</p>
+  </section>
+
+  <section class="about-section">
+    <h2>Who We Are</h2>
+    <p>Pacheco Estates is a team of real estate professionals who specialize in helping homeowners sell quickly and easily. Whether you're facing foreclosure, relocating, downsizing, or dealing with an inherited property, we provide simple solutions with honesty and care.</p>
+
+    <h2>Our Promise</h2>
+    <p>We don’t believe in pressure. We believe in options. That’s why we offer straightforward cash offers with no repairs, no commissions, and no surprises. You stay in control of your timeline, and we handle the rest.</p>
+
+    <h2>Why It Matters</h2>
+    <p>We’ve worked with hundreds of sellers who thought they had no choice. What they found was peace of mind — and a fresh start. That’s the real estate experience we’re proud to deliver.</p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Pacheco Estates</p>
+    <p>&copy; 2025 Pacheco Estates. Helping homeowners sell smarter, faster, easier.</p>
   </footer>
 </body>
 </html>
