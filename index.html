@@ -46,275 +46,84 @@
       font-weight: 600;
       font-size: 18px;
     }
-    .sticky-bar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-      font-size: 16px;
-      display: none;
-    }
-    .sticky-bar a {
-      background-color: white;
-      color: var(--accent-color);
-      padding: 8px 16px;
-      margin-left: 15px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 40px;
-      background-color: var(--primary-color);
-      color: var(--text-color);
-    }
-    .hero-content {
-      max-width: 500px;
-    }
-    .hero-content h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    .hero-content p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-    .hero-image img {
-      width: 550px;
-      border-radius: 20px 0 20px 0;
-      object-fit: cover;
-    }
-    .cta-button {
-      background-color: var(--accent-color);
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-      gap: 40px;
-    }
-    .section.reverse {
-      flex-direction: row-reverse;
-    }
-    .section-content {
-      flex: 1;
-      min-width: 300px;
-    }
-    .section-media {
-      flex: 1;
-      min-width: 300px;
-    }
-    .section h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    .section p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-    .section img, .section video {
-      width: 100%;
-      border-radius: 20px;
-      object-fit: cover;
-    }
-    footer {
-      background-color: var(--primary-color);
-      color: white;
-      text-align: center;
-      padding: 30px;
-      font-size: 16px;
-    }
-      @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        margin-top: 10px;
-      }
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-      }
-      .hero-content h1 {
-        font-size: 36px;
-      }
-      .hero-content p {
-        font-size: 18px;
-      }
-      .hero-image img {
-        width: 100%;
-        margin-top: 30px;
-      }
-      .section {
-        flex-direction: column;
-        padding: 40px 20px;
-      }
-      .section.reverse {
-        flex-direction: column;
-      }
-      .section-content, .section-media {
-        width: 100%;
-      }
-      form {
-        padding: 20px !important;
-      }
-    }
+    .hero, .section {padding:80px 20px; max-width:1100px; margin:auto;}
+    .cta-button {background:var(--accent-color); color:white; padding:15px 30px; border:none; border-radius:6px; text-decoration:none; font-weight:bold; font-size:18px;}
+    footer {background-color: var(--primary-color);color: white;text-align: center;padding: 30px;font-size: 16px;}
   </style>
-  <script>
-  document.querySelectorAll('.cta-button').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      if (this.closest('form')) return;
-      const formSection = document.getElementById('offer-form');
-      if (formSection) {
-        e.preventDefault();
-        formSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  const offerForm = document.getElementById('offer-form');
-  if (offerForm) {
-    offerForm.addEventListener('submit', function(e) {
-      document.getElementById('confirmation-message').style.display = 'block';
-    });
-  }
-
-  const carousel = document.querySelector('.testimonial-carousel');
-  const total = document.querySelectorAll('.testimonial-card').length;
-  let position = 0;
-
-  function rotateTestimonials(index) {
-    carousel.style.transform = `translateX(-${index * 33.3333}%)`;
-  }
-
-  document.getElementById('prevTestimonial').addEventListener('click', () => {
-    position = (position - 1 + total) % total;
-    rotateTestimonials(position);
-  });
-
-  document.getElementById('nextTestimonial').addEventListener('click', () => {
-    position = (position + 1) % total;
-    rotateTestimonials(position);
-  });
-
-  setInterval(() => {
-    position = (position + 1) % total;
-    rotateTestimonials(position);
-  }, 6000);
-</script>
 </head>
 <body>
-  <div class="sticky-bar">
-    Still selling? <a href="#offer-form">Get a Cash Offer</a>
-  </div>
-
   <header>
     <h1>Pacheco Estates</h1>
     <nav>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="team.html">Team</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Get a Cash Offer</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Sell Your Home Without the Stress</h1>
-      <p>You're busy. You don’t want to deal with agents, repairs, or showings. We get it — and we’ve built a simpler way.</p>
+  <section class="hero" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+    <div style="max-width:500px;">
+      <h1 style="font-size:48px;">Sell Your Home Without the Stress</h1>
+      <p style="font-size:20px;">You're busy. You don’t want to deal with agents, repairs, or showings. We get it — and we’ve built a simpler way.</p>
       <a href="#offer-form" class="cta-button">Get My Offer Now</a>
     </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1050&q=80" alt="House">
-    </div>
+    <div><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1050&q=80" style="width:550px;border-radius:20px 0 20px 0;"></div>
   </section>
 
-  <section class="section">
-    <div class="section-content">
+  <section class="section" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;">
+    <div style="flex:1;min-width:300px;">
       <h2>You Deserve a Simple Way to Sell</h2>
       <p>Most homeowners feel overwhelmed selling their property. That’s why we buy homes directly — no agents, no fees, no surprises.</p>
       <a href="#offer-form" class="cta-button">Get My Offer Now</a>
     </div>
-    <div class="section-media">
-      <img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Happy Seller">
-    </div>
+    <div style="flex:1;min-width:300px;"><img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&h=600" style="width:100%;border-radius:20px;"></div>
   </section>
 
-  <section class="section reverse">
-    <div class="section-content">
+  <section class="section" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;flex-direction:row-reverse;">
+    <div style="flex:1;min-width:300px;">
       <h2>A Clear Path, From Offer to Close</h2>
       <p>We’ll give you a competitive offer fast. You pick your close date. We handle the paperwork. That’s it.</p>
       <a href="#offer-form" class="cta-button">See What You Could Get</a>
     </div>
-    <div class="section-media">
-      <img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Selling Option">
-    </div>
+    <div style="flex:1;min-width:300px;"><img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&h=600" style="width:100%;border-radius:20px;"></div>
   </section>
 
-  <section class="section">
-  <div class="section-content">
-    <h2>A Guide You Can Trust</h2>
-    <p>You're not alone. Our team is here to support you through every step, with real people and real communication.</p>
-    <a href="#offer-form" class="cta-button">Speak With a Real Person</a>
-  </div>
-  <div class="section-media">
-    <img src="https://images.pexels.com/photos/8867436/pexels-photo-8867436.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Support on Phone">
-  </div>
-</section>
+  <section class="section" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;">
+    <div style="flex:1;min-width:300px;">
+      <h2>A Guide You Can Trust</h2>
+      <p>You're not alone. Our team is here to support you through every step, with real people and real communication.</p>
+      <a href="#offer-form" class="cta-button">Speak With a Real Person</a>
+    </div>
+    <div style="flex:1;min-width:300px;"><img src="https://images.pexels.com/photos/8867436/pexels-photo-8867436.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%;border-radius:20px;"></div>
+  </section>
 
-  <section class="section reverse">
-    <div class="section-content">
+  <section class="section" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;flex-direction:row-reverse;">
+    <div style="flex:1;min-width:300px;">
       <h2>Join Thousands Who Sold Smarter</h2>
       <p>Pacheco Estates has helped people just like you skip the stress and sell on their own terms. Let’s do the same for you.</p>
       <a href="#offer-form" class="cta-button">Get Started</a>
     </div>
-    <div class="section-media">
-      <img src="https://images.pexels.com/photos/3845512/pexels-photo-3845512.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Happy clients and home">
-    </div>
+    <div style="flex:1;min-width:300px;"><img src="https://images.pexels.com/photos/3845512/pexels-photo-3845512.jpeg?auto=compress&cs=tinysrgb&h=600" style="width:100%;border-radius:20px;"></div>
   </section>
 
   <section class="section" style="flex-direction: column; text-align: center;">
-  <h2 style="font-size: 36px; margin-bottom: 40px;">What Homeowners Are Saying</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-    <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
-      <p style="font-style: italic;">“Pacheco Estates made the selling process stress-free and simple. I got an offer in 24 hours!”</p>
-      <p style="font-weight: bold; margin-top: 10px;">— Maria G., Miami, FL</p>
+    <h2 style="font-size: 36px; margin-bottom: 40px;">What Homeowners Are Saying</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+      <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+        <p style="font-style: italic;">“Pacheco Estates made the selling process stress-free and simple. I got an offer in 24 hours!”</p>
+        <p style="font-weight: bold; margin-top: 10px;">— Maria G., Miami, FL</p>
+      </div>
+      <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+        <p style="font-style: italic;">“I inherited a property I didn’t want. They made me a fair offer and took care of everything.”</p>
+        <p style="font-weight: bold; margin-top: 10px;">— Jamal W., Dallas, TX</p>
+      </div>
+      <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+        <p style="font-style: italic;">“Highly recommend them. No repairs, no agents, just results.”</p>
+        <p style="font-weight: bold; margin-top: 10px;">— Cheryl S., Tampa, FL</p>
+      </div>
     </div>
-    <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
-      <p style="font-style: italic;">“I inherited a property I didn’t want. They made me a fair offer and took care of everything.”</p>
-      <p style="font-weight: bold; margin-top: 10px;">— Jamal W., Dallas, TX</p>
-    </div>
-    <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
-      <p style="font-style: italic;">“Highly recommend them. No repairs, no agents, just results.”</p>
-      <p style="font-weight: bold; margin-top: 10px;">— Cheryl S., Tampa, FL</p>
-    </div>
-  </div>
-</section>
-
-$1
-
-  
+  </section>
 
   <section class="section" style="flex-direction: column; max-width: 900px; margin: auto;">
     <form id="offer-form" action="https://formsubmit.co/sales@pachecoestates.com" method="POST" style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
@@ -326,7 +135,6 @@ $1
       <input type="text" placeholder="Property Address" required>
       <input type="tel" placeholder="Phone Number" required>
       <input type="email" placeholder="Email Address" required>
-
       <label>Preferred Method of Contact:</label>
       <select required>
         <option value="">Select one</option>
@@ -334,28 +142,25 @@ $1
         <option value="text">Text Message</option>
         <option value="email">Email</option>
       </select>
-
       <label>Reason for Selling (select all that apply):</label>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;">
-  <label><input type="checkbox" name="reason" value="Pre-foreclosure"> Pre-foreclosure</label>
-  <label><input type="checkbox" name="reason" value="Financial reasons"> Financial reasons</label>
-  <label><input type="checkbox" name="reason" value="Emergency sale"> Emergency sale</label>
-  <label><input type="checkbox" name="reason" value="Death in the family"> Death in the family</label>
-  <label><input type="checkbox" name="reason" value="Inherited property"> Inherited property</label>
-  <label><input type="checkbox" name="reason" value="Relocating"> Relocating</label>
-  <label><input type="checkbox" name="reason" value="Moving closer to family"> Moving closer to family</label>
-  <label><input type="checkbox" name="reason" value="Tired landlord"> Tired landlord</label>
-  <label><input type="checkbox" name="reason" value="Too many repairs"> Too many repairs</label>
-  <label><input type="checkbox" name="reason" value="Other"> Other</label>
-</div>
-
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;">
+        <label><input type="checkbox" name="reason" value="Pre-foreclosure"> Pre-foreclosure</label>
+        <label><input type="checkbox" name="reason" value="Financial reasons"> Financial reasons</label>
+        <label><input type="checkbox" name="reason" value="Emergency sale"> Emergency sale</label>
+        <label><input type="checkbox" name="reason" value="Death in the family"> Death in the family</label>
+        <label><input type="checkbox" name="reason" value="Inherited property"> Inherited property</label>
+        <label><input type="checkbox" name="reason" value="Relocating"> Relocating</label>
+        <label><input type="checkbox" name="reason" value="Moving closer to family"> Moving closer to family</label>
+        <label><input type="checkbox" name="reason" value="Tired landlord"> Tired landlord</label>
+        <label><input type="checkbox" name="reason" value="Too many repairs"> Too many repairs</label>
+        <label><input type="checkbox" name="reason" value="Other"> Other</label>
+      </div>
       <label>Is anyone living in the property?</label>
       <select required>
         <option value="">Select one</option>
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
-
       <label>Type of Property:</label>
       <select required>
         <option value="">Select one</option>
@@ -366,7 +171,6 @@ $1
         <option>Vacant Land</option>
         <option>Other</option>
       </select>
-
       <label>How soon are you looking to sell?</label>
       <select required>
         <option value="">Select one</option>
@@ -376,7 +180,6 @@ $1
         <option>4–5 Months</option>
         <option>6+ Months</option>
       </select>
-
       <label>Property Condition:</label>
       <select required>
         <option value="">Select one</option>
@@ -386,7 +189,6 @@ $1
         <option>Move-in ready</option>
         <option>New or recently renovated</option>
       </select>
-
       <label>Do you currently have a mortgage?</label>
       <select required>
         <option value="">Select one</option>
@@ -394,9 +196,7 @@ $1
         <option>No</option>
         <option>Prefer not to say</option>
       </select>
-
       <input type="text" placeholder="Asking Price (optional)">
-
       <label>Best Time to Contact:</label>
       <select required>
         <option value="">Select one</option>
@@ -404,9 +204,7 @@ $1
         <option>Afternoon</option>
         <option>Evening</option>
       </select>
-
       <textarea rows="4" placeholder="Additional notes (optional)"></textarea>
-
       <button type="submit" class="cta-button">Submit My Request</button>
       <p id="confirmation-message" style="display:none; color: green; font-weight: bold; text-align: center; margin-top: 20px;">Thank you! Your request has been received. We'll contact you shortly.</p>
     </form>
@@ -415,26 +213,5 @@ $1
   <footer>
     <p>&copy; 2025 Pacheco Estates. Helping homeowners sell smarter, faster, easier.</p>
   </footer>
-<script>
-  document.querySelectorAll('.cta-button').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      if (this.closest('form')) return; // skip if it's the form submit button
-      const formSection = document.getElementById('offer-form');
-      if (formSection) {
-        e.preventDefault();
-        formSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  const offerForm = document.getElementById('offer-form');
-  if (offerForm) {
-    offerForm.addEventListener('submit', function(e) {
-    // Let FormSubmit handle it
-    document.getElementById('confirmation-message').style.display = 'block';
-  });
-    });
-  }
-</script>
 </body>
 </html>
