@@ -1,38 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Pacheco Estates</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0a1f44;
+      --accent-color: #00b2ff;
+      --text-color: #ffffff;
+      --bg-color: #f8f9fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+    }
+    header {
+      background-color: var(--primary-color);
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .hero-contact {
+      padding: 80px 40px;
+      text-align: center;
+      background-color: var(--primary-color);
+      color: white;
+    }
+    .hero-contact h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero-contact p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .contact-form {
+      max-width: 900px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      display: grid;
+      gap: 20px;
+    }
+    .cta-button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 16px;
+    }
+    @media (max-width:768px){
+      .hero-contact h1{font-size:36px;}
+      .hero-contact p{font-size:18px;}
+      .contact-form{padding:20px;}
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Pacheco Estates</h1>
+    <h1 style="margin:0; font-size:24px; font-weight:700; color:white;">Pacheco Estates</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="team.html">Team</a>
-      <a href="reviews.html">Reviews</a>
     </nav>
   </header>
 
-  <main>
-    <h2>Request a Cash Offer</h2>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <label>Full Name:</label><br>
-      <input type="text" name="name" required><br>
-      <label>Email:</label><br>
-      <input type="email" name="email" required><br>
-      <label>Property Address:</label><br>
-      <input type="text" name="address" required><br>
-      <label>Details:</label><br>
-      <textarea name="message" required></textarea><br><br>
-      <button type="submit">Send</button>
+  <section class="hero-contact">
+    <h1>Request Your Cash Offer</h1>
+    <p>Fill out the form below and get a fair cash offer fast. No agents, no repairs, no hassle.</p>
+  </section>
+
+  <section>
+    <form class="contact-form" action="https://formsubmit.co/sales@pachecoestates.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Property Submission">
+      <input type="hidden" name="_next" value="https://www.pachecoestates.com/#thank-you">
+
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="text" name="address" placeholder="Property Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+
+      <label>Preferred Method of Contact:</label>
+      <select name="contact_method" required>
+        <option value="">Select one</option>
+        <option value="call">Phone Call</option>
+        <option value="text">Text Message</option>
+        <option value="email">Email</option>
+      </select>
+
+      <label>Reason for Selling (select all that apply):</label>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;">
+        <label><input type="checkbox" name="reason" value="Pre-foreclosure"> Pre-foreclosure</label>
+        <label><input type="checkbox" name="reason" value="Financial reasons"> Financial reasons</label>
+        <label><input type="checkbox" name="reason" value="Emergency sale"> Emergency sale</label>
+        <label><input type="checkbox" name="reason" value="Death in the family"> Death in the family</label>
+        <label><input type="checkbox" name="reason" value="Inherited property"> Inherited property</label>
+        <label><input type="checkbox" name="reason" value="Relocating"> Relocating</label>
+        <label><input type="checkbox" name="reason" value="Moving closer to family"> Moving closer to family</label>
+        <label><input type="checkbox" name="reason" value="Tired landlord"> Tired landlord</label>
+        <label><input type="checkbox" name="reason" value="Too many repairs"> Too many repairs</label>
+        <label><input type="checkbox" name="reason" value="Other"> Other</label>
+      </div>
+
+      <label>Is anyone living in the property?</label>
+      <select name="occupied" required>
+        <option value="">Select one</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label>Type of Property:</label>
+      <select name="property_type" required>
+        <option value="">Select one</option>
+        <option>Single Family</option>
+        <option>Multi-Family</option>
+        <option>Townhome</option>
+        <option>Condo</option>
+        <option>Vacant Land</option>
+        <option>Other</option>
+      </select>
+
+      <label>How soon are you looking to sell?</label>
+      <select name="timeline" required>
+        <option value="">Select one</option>
+        <option>ASAP</option>
+        <option>1 Month</option>
+        <option>2–3 Months</option>
+        <option>4–5 Months</option>
+        <option>6+ Months</option>
+      </select>
+
+      <label>Property Condition:</label>
+      <select name="condition" required>
+        <option value="">Select one</option>
+        <option>Needs major repairs</option>
+        <option>Needs minor repairs</option>
+        <option>Average condition</option>
+        <option>Move-in ready</option>
+        <option>New or recently renovated</option>
+      </select>
+
+      <label>Do you currently have a mortgage?</label>
+      <select name="mortgage" required>
+        <option value="">Select one</option>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Prefer not to say</option>
+      </select>
+
+      <input type="text" name="price" placeholder="Asking Price (optional)">
+
+      <label>Best Time to Contact:</label>
+      <select name="best_time" required>
+        <option value="">Select one</option>
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Evening</option>
+      </select>
+
+      <textarea name="notes" rows="4" placeholder="Additional notes (optional)"></textarea>
+
+      <button type="submit" class="cta-button">Submit My Request</button>
+      <p id="confirmation-message" style="display:none; color: green; font-weight: bold; text-align: center; margin-top: 20px;">Thank you! Your request has been received. We'll contact you shortly.</p>
     </form>
-  </main>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Pacheco Estates</p>
+    <p>&copy; 2025 Pacheco Estates. Helping homeowners sell smarter, faster, easier.</p>
   </footer>
 </body>
 </html>
+
