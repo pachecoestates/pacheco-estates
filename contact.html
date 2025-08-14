@@ -100,7 +100,11 @@
   </section>
 
   <section>
-    <form class="contact-form" action="https://formsubmit.co/sales@pachecoestates.com" method="POST">
+    <form id="contact-form" class="contact-form" action="https://formsubmit.co/pachecoformsubmit@gmail.com" method="POST">
+      <!-- Honeypot spam trap -->
+      <input type="text" name="website" style="display:none">
+
+      <!-- FormSubmit config -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="New Property Submission">
       <input type="hidden" name="_next" value="https://www.pachecoestates.com/#thank-you">
@@ -190,14 +194,31 @@
 
       <textarea name="notes" rows="4" placeholder="Additional notes (optional)"></textarea>
 
-      <button type="submit" class="cta-button">Submit My Request</button>
-      <p id="confirmation-message" style="display:none; color: green; font-weight: bold; text-align: center; margin-top: 20px;">Thank you! Your request has been received. We'll contact you shortly.</p>
+      <!-- reCAPTCHA v3 button -->
+      <button
+        class="g-recaptcha cta-button"
+        data-sitekey="6LfCIKYrAAAAAPCswkw9IEwz-lZqAfEgWHtbP0qr"
+        data-callback="onSubmit"
+        data-action="submit">
+        Submit My Request
+      </button>
+
+      <p id="confirmation-message" style="display:none; color: green; font-weight: bold; text-align: center; margin-top: 20px;">
+        Thank you! Your request has been received. We'll contact you shortly.
+      </p>
     </form>
   </section>
 
   <footer>
     <p>&copy; 2025 Pacheco Estates. Helping homeowners sell smarter, faster, easier.</p>
   </footer>
+
+  <!-- reCAPTCHA script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("contact-form").submit();
+    }
+  </script>
 </body>
 </html>
-
