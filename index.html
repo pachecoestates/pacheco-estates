@@ -14,6 +14,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pacheco Estates - Sell Your Home Fast</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("offer-form").submit();
+    }
+  </script>
   <style>
     :root {
       --primary-color: #0a1f44;
@@ -46,9 +52,29 @@
       font-weight: 600;
       font-size: 18px;
     }
-    .hero, .section {padding:80px 20px; max-width:1100px; margin:auto;}
-    .cta-button {background:var(--accent-color); color:white; padding:15px 30px; border:none; border-radius:6px; text-decoration:none; font-weight:bold; font-size:18px;}
-    footer {background-color: var(--primary-color);color: white;text-align: center;padding: 30px;font-size: 16px;}
+    .hero, .section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .cta-button {
+      background: var(--accent-color);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
@@ -62,86 +88,28 @@
     </nav>
   </header>
 
-  <section class="hero" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;">
-    <div style="max-width:500px;">
-      <h1 style="font-size:48px;">Sell Your Home Without the Stress</h1>
-      <p style="font-size:20px;">You're busy. You don’t want to deal with agents, repairs, or showings. We get it — and we’ve built a simpler way.</p>
-      <a href="#offer-form" class="cta-button">Get My Offer Now</a>
-    </div>
-    <div><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1050&q=80" style="width:550px;border-radius:20px 0 20px 0;"></div>
-  </section>
-
-  <section class="section" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;">
-    <div style="flex:1;min-width:300px;">
-      <h2>You Deserve a Simple Way to Sell</h2>
-      <p>Most homeowners feel overwhelmed selling their property. That’s why we buy homes directly — no agents, no fees, no surprises.</p>
-      <a href="#offer-form" class="cta-button">Get My Offer Now</a>
-    </div>
-    <div style="flex:1;min-width:300px;"><img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&h=600" style="width:100%;border-radius:20px;"></div>
-  </section>
-
-  <section class="section" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;flex-direction:row-reverse;">
-    <div style="flex:1;min-width:300px;">
-      <h2>A Clear Path, From Offer to Close</h2>
-      <p>We’ll give you a competitive offer fast. You pick your close date. We handle the paperwork. That’s it.</p>
-      <a href="#offer-form" class="cta-button">See What You Could Get</a>
-    </div>
-    <div style="flex:1;min-width:300px;"><img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&h=600" style="width:100%;border-radius:20px;"></div>
-  </section>
-
-  <section class="section" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;">
-    <div style="flex:1;min-width:300px;">
-      <h2>A Guide You Can Trust</h2>
-      <p>You're not alone. Our team is here to support you through every step, with real people and real communication.</p>
-      <a href="#offer-form" class="cta-button">Speak With a Real Person</a>
-    </div>
-    <div style="flex:1;min-width:300px;"><img src="https://images.pexels.com/photos/8867436/pexels-photo-8867436.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%;border-radius:20px;"></div>
-  </section>
-
-  <section class="section" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;flex-direction:row-reverse;">
-    <div style="flex:1;min-width:300px;">
-      <h2>Join Thousands Who Sold Smarter</h2>
-      <p>Pacheco Estates has helped people just like you skip the stress and sell on their own terms. Let’s do the same for you.</p>
-      <a href="#offer-form" class="cta-button">Get Started</a>
-    </div>
-    <div style="flex:1;min-width:300px;"><img src="https://images.pexels.com/photos/3845512/pexels-photo-3845512.jpeg?auto=compress&cs=tinysrgb&h=600" style="width:100%;border-radius:20px;"></div>
-  </section>
-
-  <section class="section" style="flex-direction: column; text-align: center;">
-    <h2 style="font-size: 36px; margin-bottom: 40px;">What Homeowners Are Saying</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-      <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
-        <p style="font-style: italic;">“Pacheco Estates made the selling process stress-free and simple. I got an offer in 24 hours!”</p>
-        <p style="font-weight: bold; margin-top: 10px;">— Maria G., Miami, FL</p>
-      </div>
-      <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
-        <p style="font-style: italic;">“I inherited a property I didn’t want. They made me a fair offer and took care of everything.”</p>
-        <p style="font-weight: bold; margin-top: 10px;">— Jamal W., Dallas, TX</p>
-      </div>
-      <div style="flex: 1; min-width: 250px; max-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
-        <p style="font-style: italic;">“Highly recommend them. No repairs, no agents, just results.”</p>
-        <p style="font-weight: bold; margin-top: 10px;">— Cheryl S., Tampa, FL</p>
-      </div>
-    </div>
-  </section>
-
   <section class="section" style="flex-direction: column; max-width: 900px; margin: auto;">
-    <form id="offer-form" action="https://formsubmit.co/sales@pachecoestates.com" method="POST" style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+    <form id="offer-form" action="https://formsubmit.co/pachecoformsubmit@gmail.com" method="POST" style="display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+      <!-- Hidden fields -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="New Property Submission">
       <input type="hidden" name="_next" value="https://www.pachecoestates.com/#thank-you">
+      <input type="text" name="website" style="display:none"> <!-- Honeypot field -->
+
       <h2 style="text-align: center; margin-bottom: 10px; font-size: 36px;">Request Your Cash Offer</h2>
-      <input type="text" placeholder="Full Name" required>
-      <input type="text" placeholder="Property Address" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <input type="email" placeholder="Email Address" required>
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="text" name="address" placeholder="Property Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+
       <label>Preferred Method of Contact:</label>
-      <select required>
+      <select name="contact_method" required>
         <option value="">Select one</option>
         <option value="call">Phone Call</option>
         <option value="text">Text Message</option>
         <option value="email">Email</option>
       </select>
+
       <label>Reason for Selling (select all that apply):</label>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;">
         <label><input type="checkbox" name="reason" value="Pre-foreclosure"> Pre-foreclosure</label>
@@ -155,14 +123,16 @@
         <label><input type="checkbox" name="reason" value="Too many repairs"> Too many repairs</label>
         <label><input type="checkbox" name="reason" value="Other"> Other</label>
       </div>
+
       <label>Is anyone living in the property?</label>
-      <select required>
+      <select name="occupied" required>
         <option value="">Select one</option>
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
+
       <label>Type of Property:</label>
-      <select required>
+      <select name="property_type" required>
         <option value="">Select one</option>
         <option>Single Family</option>
         <option>Multi-Family</option>
@@ -171,8 +141,9 @@
         <option>Vacant Land</option>
         <option>Other</option>
       </select>
+
       <label>How soon are you looking to sell?</label>
-      <select required>
+      <select name="timeline" required>
         <option value="">Select one</option>
         <option>ASAP</option>
         <option>1 Month</option>
@@ -180,8 +151,9 @@
         <option>4–5 Months</option>
         <option>6+ Months</option>
       </select>
+
       <label>Property Condition:</label>
-      <select required>
+      <select name="condition" required>
         <option value="">Select one</option>
         <option>Needs major repairs</option>
         <option>Needs minor repairs</option>
@@ -189,23 +161,32 @@
         <option>Move-in ready</option>
         <option>New or recently renovated</option>
       </select>
+
       <label>Do you currently have a mortgage?</label>
-      <select required>
+      <select name="mortgage" required>
         <option value="">Select one</option>
         <option>Yes</option>
         <option>No</option>
         <option>Prefer not to say</option>
       </select>
-      <input type="text" placeholder="Asking Price (optional)">
+
+      <input type="text" name="price" placeholder="Asking Price (optional)">
+
       <label>Best Time to Contact:</label>
-      <select required>
+      <select name="best_time" required>
         <option value="">Select one</option>
         <option>Morning</option>
         <option>Afternoon</option>
         <option>Evening</option>
       </select>
-      <textarea rows="4" placeholder="Additional notes (optional)"></textarea>
-      <button type="submit" class="cta-button">Submit My Request</button>
+
+      <textarea name="notes" rows="4" placeholder="Additional notes (optional)"></textarea>
+
+      <button type="submit" class="g-recaptcha cta-button"
+        data-sitekey="6LfCIKYrAAAAAPCswkw9IEwz-lZqAfEgWHtbP0qr"
+        data-callback="onSubmit"
+        data-action="submit">Submit My Request</button>
+
       <p id="confirmation-message" style="display:none; color: green; font-weight: bold; text-align: center; margin-top: 20px;">Thank you! Your request has been received. We'll contact you shortly.</p>
     </form>
   </section>
@@ -215,3 +196,4 @@
   </footer>
 </body>
 </html>
+
